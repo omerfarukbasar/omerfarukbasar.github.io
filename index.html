@@ -1,127 +1,177 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Omer F. Basar | Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="min-h-screen bg-gray-900 text-gray-100">
 
-<html>
-	<head>
-		<title>Omer Basar | Portfolio</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="is-preload">
+    <!-- Socials Section -->
+    <header class="container mx-auto px-4 py-16 text-center">
+        <h1 class="text-4xl font-bold mb-4">Omer F. Basar</h1>
+        <p class="text-xl mb-8">NYU Computer Science Graduate Student | Aspiring Software Engineer & Project Manager</p>
+        <div class="flex justify-center space-x-4">
+            <a href="https://github.com/omerfarukbasar" class="inline-flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50">
+                <svg class="mr-2 h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
+                </svg>
+                GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/omerfbasar/" class="inline-flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50">
+                <svg class="mr-2 h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd" />
+                </svg>
+                LinkedIn
+            </a>
+            <a href="https://omerfarukbasar.blogspot.com/" class="inline-flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50">
+                Photography
+            </a>
+            <button id="toggleGame" class="inline-flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50">
+                Play Snake Game
+            </button>
+        </div>
+    </header>
 
-		<!-- Header -->
-			<section id="header">
-				<header>
-					<span class="image avatar"><img src="images/IMG_1566.jpeg" alt="" /></span>
-					<h1 id="logo"><a href="#">Omer Basar</a></h1>
-					<p>Inspired and driven to try new ways of challenging my programming skills.<br />
-					</p>
-				</header>
-				<nav id="nav">
-					<ul>
-						<li><a href="#one" class="active">About</a></li>
-						<li><a href="#three">Projects</a></li>
-					</ul>
-				</nav>
-				<footer>
-					<ul class="icons">
-						<li><a href="https://github.com/omerfarukbasar" class="icon brands fa-github"><span class="label">Github</span></a></li>
-						<li><a href="https://www.linkedin.com/in/omerfbasar/" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
-						<li><a href="mailto: omerfbasar@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-					</ul>
-				</footer>
-			</section>
-
-		<!-- Wrapper -->
-			<div id="wrapper">
-
-				<!-- Main -->
-					<div id="main">
-
-						<!-- One -->
-							<section id="one">
-								<div class="image main" data-position="center">
-									<img src="images/s-b-vonlanthen-A8iLzX6OddM-unsplash_adobespark.jpeg" alt="" />
-								</div>
-								<div class="container">
-									<header class="major">
-										<h2>Hi, I'm Omer Basar!</h2>
-										<h3>About</h3>
-									</header>
-									<p>
-									I'm a final year graduate student pursuing a Masters in Computer Science at NYU Tandon School of Engineering, with a strong passion for integrating cutting-edge technologies into my daily life.
-								 	I have experience working with Java, Python, MySQL, Kotlin, C, HTML, and CSS.
-									My interests in the technology field are in mobile and desktop applications, databases, user accessability, and computer security.
-									</br></br>
-										In my spare time, I like to engage in photography and do martial arts.
-									 </p>
-								</div>
-							</section>
-
-
-						<!-- Three -->
-							<section id="three">
-								<div class="container">
-									<h3>Projects</h3>
-									<p>Check out some of the cool stuff that I've been working on!</p>
-									<div class="features">
-										<article>
-											<a href="https://github.com/omerfarukbasar/battleship" class="image"><img src="images/battleship.png" alt="" /></a>
-											<div class="inner">
-												<a href="https://github.com/omerfarukbasar/battleship"><h4>Battleship</h4></a>
-												<p>Desktop client for playing battleship on your local area network.</p>
-											</div>
-										</article>
-										<article>
-											<a href="https://github.com/omerfarukbasar/RoomioApplication" class="image"><img src="images/apartment.jpg" alt="" /></a>
-											<div class="inner">
-												<a href="https://github.com/omerfarukbasar/RoomioApplication"><h4>Roomio</h4></a>
-												<p>A mockup of an apartment rental service using databases.</p>
-											</div>
-										</article>
-								
-										<article>
-											<a href="https://github.com/omerfarukbasar/lyrical" class="image"><img src="https://images.unsplash.com/photo-1495434942214-9b525bba74e9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3270&q=80" alt="" /></a>
-											<div class="inner">
-												<a href="https://github.com/omerfarukbasar/lyrical"><h4>Lyrical</h4></a>
-												<p>A song identifying app that utilizes lyrics from voice input.</p>
-											</div>
-										</article>
-										
-										<article>
-											<a href="https://omerfarukbasar.blogspot.com/" class="image"><img src="images/IMG_0605.png" alt="" /></a>
-											<div class="inner">
-												<a href="https://omerfarukbasar.blogspot.com/"><h4>Photography Blog</h4></a>
-												<p>Here is my blog where I post some of the pictures that I take and edit. I cover various elements and themes.</p>
-											</div>
-										</article>
-										
-									</div>
-								</div>
-							</section>
+    <!-- Game Section -->
+    <section id="gameSection" class="py-16 bg-gray-800 hidden">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-8 text-center">Snake Game</h2>
+            <div class="flex justify-center">
+                <div class="flex flex-col items-center">
+                    <canvas id="gameCanvas" width="400" height="400" class="border border-gray-300"></canvas>
+                    <p id="score" class="mt-4 text-xl">Score: 0</p>
+                    <div id="gameOver" class="mt-4 hidden flex flex-col items-center">
+                        <p class="text-xl mb-2 text-center">Game Over!</p>
+                        <button id="restartGame" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 mt-2">
+                            Restart
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <p class="text-center mt-4">
+                Use W, A, S, D keys to control the snake. Eat the red food to grow and increase your score!
+            </p>
+        </div>
+    </section>
 
 
-					</div>
+    <!-- About Section -->
+    <section class="bg-gray-800 py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-8 text-center">About Me</h2>
+            <p class="text-lg max-w-2xl mx-auto text-center">
+                I'm a passionate computer science graduate student at NYU, focusing on software engineering and project management. 
+                With a strong foundation in algorithms, data structures, and software development methodologies, 
+                I'm eager to apply my skills to real-world challenges and innovative projects.
+            </p>
+        </div>
+    </section>
 
-				<!-- Footer -->
-					<section id="footer">
-						<div class="container">
-							<ul class="copyright">
-								<li>Design: <a href="http://html5up.net">HTML5 UP</a></li><li>Images: <a href="https://unsplash.com/">Unsplash</a></li>
-							</ul>
-						</div>
-					</section>
+    <!-- Skills Section -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-8 text-center">Skills</h2>
+            <div class="flex flex-wrap justify-center gap-2">
+                <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-blue-100 text-blue-800">Python</span>
+                <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-green-100 text-green-800">Java</span>
+                <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-yellow-100 text-yellow-800">MySQL</span>
+                <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-red-100 text-red-800">HTML</span>
+                <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-indigo-100 text-indigo-800">CSS</span>
+                <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-pink-100 text-pink-800">Javascript</span>
+                <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-purple-100 text-purple-800">Kotlin</span>
+                <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-gray-100 text-gray-800">C</span>
+                <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-blue-100 text-blue-800">Git</span>
+                <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-green-100 text-green-800">Django</span>
+                <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-yellow-100 text-yellow-800">Flask</span>
+                <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-red-100 text-red-800">Agile</span>
+                <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-indigo-100 text-indigo-800">Scrum</span>
+                <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-pink-100 text-pink-800">Software Engineering</span>
+                <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-purple-100 text-purple-800">Project Management</span>
+                <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-gray-100 text-gray-800">Public Speaking</span>
+            </div>
+        </div>
+    </section>
 
-			</div>
+    <!-- Projects Section -->
+    <section class="bg-gray-800 py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-8 text-center">Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-gray-700 rounded-lg shadow-md overflow-hidden">
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold mb-2">Public Servicer Finder for NYC</h3>
+                        <p class="text-gray-300 mb-4">Leading development on a web app that makes locating public services more accessible to NYC residents.</p>
+                        <p class="text-blue-400">Releasing in December 2025</p>
+                    </div>
+                </div>
+                <div class="bg-gray-700 rounded-lg shadow-md overflow-hidden">
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold mb-2">Battleship Multiplayer</h3>
+                        <p class="text-gray-300 mb-4">Built a desktop client with GUI for playing Battleship over a local area network.</p>
+                        <a href="https://github.com/omerfarukbasar/battleship" class="text-blue-400 hover:text-blue-300">View Project <span aria-hidden="true">&rarr;</span></a>
+                    </div>
+                </div>
+                <div class="bg-gray-700 rounded-lg shadow-md overflow-hidden">
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold mb-2">Roomio Search</h3>
+                        <p class="text-gray-300 mb-4">Implemented a mockup apartment rental service using MySQL database and Flask.</p>
+                        <a href="https://github.com/omerfarukbasar/RoomioApplication" class="text-blue-400 hover:text-blue-300">View Project <span aria-hidden="true">&rarr;</span></a>
+                    </div>
+                </div>
+                <div class="bg-gray-700 rounded-lg shadow-md overflow-hidden">
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold mb-2">Lyrical Song Identifier</h3>
+                        <p class="text-gray-300 mb-4">Created a shazam-like andorid app for identifying songs based on voice input.</p>
+                        <a href="https://github.com/omerfarukbasar/lyrical" class="text-blue-400 hover:text-blue-300">View Project <span aria-hidden="true">&rarr;</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+    <!-- Education Section -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-8 text-center">Education</h2>
+            <div class="bg-gray-700 rounded-lg shadow-md overflow-hidden max-w-2xl mx-auto">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2">New York University</h3>
+                    <p class="text-gray-300 mb-4">Master of Science in Computer Science</p>
+                    <p>Expected Graduation: May 2025</p>
+                    <p>GPA: 4.0/4.0</p>
+                    <p>Relevant Coursework: Algorithms, Software Engineering, Databases, Java Programming, HCI, Operating Systems, Programming Languages, Information Security & Privacy</p>
+                </div>
+            </div>
+            <br>
+            <div class="bg-gray-700 rounded-lg shadow-md overflow-hidden max-w-2xl mx-auto">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2">Adelphi University</h3>
+                    <p class="text-gray-300 mb-4">Bachelor of Science in Computer Science</p>
+                    <p>May 2022</p>
+                    <p>GPA: 3.9/4.0</p>
+                    <p>Relevant Coursework: Web Development, Data Structures, Algorithms, Software Engineering, Databases, Data Analytics, Art & Science of Management, Public Speaking</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-	</body>
+    <!-- Contact Section -->
+    <footer class="bg-gray-800 py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-8">Get In Touch</h2>
+            <p class="mb-4">I'm always open to new opportunities and collaborations.</p>
+            <a href="mailto:omerfbasar@gmail.com" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700">
+                <svg class="mr-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                </svg>
+                Contact Me
+            </a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
 </html>
