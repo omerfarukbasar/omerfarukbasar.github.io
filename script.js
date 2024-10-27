@@ -13,15 +13,20 @@ let isGameOver = false; // Flag to track game over state
 // Game speed in milliseconds (125ms for twice the speed of 250ms)
 const GAME_SPEED = 125;
 
-(function setup() {
-    snake = new Snake();
-    fruit = new Fruit();
-    fruit.pickLocation(snake); // Pass snake to ensure fruit doesn't spawn on it
+// Check if the device is desktop (width >= 768px)
+const isDesktop = window.innerWidth >= 768;
 
-    startLoop(); // Start the game loop
+if (isDesktop) {
+    (function setup() {
+        snake = new Snake();
+        fruit = new Fruit();
+        fruit.pickLocation(snake); // Pass snake to ensure fruit doesn't spawn on it
 
-    window.addEventListener('keydown', handleKeyDown);
-}());
+        startLoop(); // Start the game loop
+
+        window.addEventListener('keydown', handleKeyDown);
+    }());
+}
 
 // Function to start the game loop
 function startLoop() {
@@ -225,38 +230,41 @@ function Fruit() {
     }
 }
 
-// Toggle game visibility
+// Toggle game visibility only if on desktop
 const toggleButton = document.getElementById('toggleGame');
 const gameSection = document.getElementById('gameSection');
 
-toggleButton.addEventListener('click', () => {
-    const isHidden = gameSection.classList.toggle('hidden');
-    gameSection.classList.toggle('fade-in');
-    toggleButton.textContent = isHidden ? 'Play Snake Game' : 'Hide Snake Game';
+if (isDesktop) {
+    toggleButton.addEventListener('click', () => {
+        const isHidden = gameSection.classList.toggle('hidden');
+        gameSection.classList.toggle('fade-in');
+        toggleButton.textContent = isHidden ? 'Play Snake Game' : 'Hide Snake Game';
 
-    if (isHidden) {
-        // Game is now hidden; stop the game loop
-        stopLoop();
-    } else {
-        // Game is now visible; start the game loop if not game over
-        if (!isGameOver) {
+        if (isHidden) {
+            // Game is now hidden; stop the game loop
+            stopLoop();
+        } else {
+            // Game is now visible; start the game loop if not game over
+            if (!isGameOver) {
+                startLoop();
+            }
+        }
+    });
+
+    // Restart game
+    const restartButton = document.getElementById('restartGame');
+    restartButton.addEventListener('click', () => {
+        snake = new Snake();
+        fruit.pickLocation(snake); // Pass snake to ensure fruit doesn't spawn on it
+        isGameOver = false;
+        document.getElementById('gameOver').classList.add('hidden');
+        
+        // Reset the score display to 0
+        document.getElementById('score').innerHTML = `Score: ${snake.total}`;
+
+        // If the game is visible, start the loop
+        if (!gameSection.classList.contains('hidden')) {
             startLoop();
         }
-    }
-});
-
-// Restart game
-document.getElementById('restartGame').addEventListener('click', () => {
-    snake = new Snake();
-    fruit.pickLocation(snake); // Pass snake to ensure fruit doesn't spawn on it
-    isGameOver = false;
-    document.getElementById('gameOver').classList.add('hidden');
-    
-    // Reset the score display to 0
-    document.getElementById('score').innerHTML = `Score: ${snake.total}`;
-
-    // If the game is visible, start the loop
-    if (!gameSection.classList.contains('hidden')) {
-        startLoop();
-    }
-});
+    });
+}
