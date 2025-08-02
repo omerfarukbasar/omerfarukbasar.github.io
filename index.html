@@ -3,222 +3,461 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Omer F. Basar | Portfolio</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>Omer Faruk Basar | Software Engineer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body class="min-h-screen bg-gray-900 text-gray-100">
-
-    <!-- Socials Section -->
-    <header class="container mx-auto px-4 py-16 text-center">
-        <!-- Profile Image -->
-        <img 
-        src="profile.jpeg" 
-        alt="My Profile Picture" 
-        class="w-40 h-40 full mx-auto mb-6 object-cover"
-        />
-
-        <h1 class="text-4xl font-bold mb-4">Omer F. Basar</h1>
-        <p class="text-xl mb-8">NYU Computer Science Graduate | Aspiring Software Engineer</p>
-        <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
-            <a href="https://github.com/omerfarukbasar" class="inline-flex items-center justify-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 max-w-xs w-full sm:w-auto">
-                <svg class="mr-2 h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <!-- GitHub SVG Path -->
-                    <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
-                </svg>
-                GitHub
-            </a>
-            <a href="https://www.linkedin.com/in/omer-basar/" class="inline-flex items-center justify-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 max-w-xs w-full sm:w-auto">
-                <svg class="mr-2 h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <!-- LinkedIn SVG Path -->
-                    <path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd" />
-                </svg>
-                LinkedIn
-            </a>
-            <a href="https://omerfarukbasar.blogspot.com/" class="inline-flex items-center justify-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 max-w-xs w-full sm:w-auto">
-                Photography
-            </a>
-            <!-- Hide the Play Snake Game button on mobile devices -->
-            <button id="toggleGame" class="hidden md:inline-flex items-center justify-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 max-w-xs w-full md:w-auto">
-                Play Snake Game
-            </button>
-        </div>
-    </header>
-
-    <!-- Game Section -->
-    <section id="gameSection" class="py-16 bg-gray-800 hidden">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold mb-8 text-center">Snake Game</h2>
-            <div class="flex justify-center">
-                <div class="flex flex-col items-center">
-                    <canvas id="gameCanvas" width="400" height="400" class="border border-gray-300"></canvas>
-                    <p id="score" class="mt-4 text-xl">Score: 0</p>
-                    <div id="gameOver" class="mt-4 hidden flex flex-col items-center">
-                        <p class="text-xl mb-2 text-center">Game Over!</p>
-                        <button id="restartGame" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 mt-2">
-                            Restart
-                        </button>
-                    </div>
+<body class="bg-gray-900 text-white overflow-x-hidden">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass-effect">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="text-xl font-bold">Omer Faruk Basar</div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about" class="hover:text-blue-300 transition-colors">About</a>
+                    <a href="#experience" class="hover:text-blue-300 transition-colors">Experience</a>
+                    <a href="#projects" class="hover:text-blue-300 transition-colors">Projects</a>
+                    <a href="#contact" class="hover:text-blue-300 transition-colors">Contact</a>
                 </div>
             </div>
-            <p class="text-center mt-4">
-                Use W, A, S, D keys to control the snake. Eat the red food to grow and increase your score!
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen gradient-bg hero-pattern flex items-center justify-center relative">
+        <div class="absolute inset-0 bg-black opacity-30"></div>
+        <div class="relative z-10 text-center px-4 fade-in">
+            <div class="mb-8">
+                <img 
+                    src="profile.jpeg" 
+                    alt="Omer Faruk Basar" 
+                    class="w-40 h-40 rounded-full mx-auto mb-6 border-4 border-white shadow-2xl object-cover profile-image"
+                />
+            </div>
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-200">
+                Omer Faruk Basar
+            </h1>
+            <p class="text-xl md:text-2xl mb-4 text-blue-100">Software Engineer</p>
+            <p class="text-lg md:text-xl mb-8 text-gray-200 max-w-2xl mx-auto">
+                NYU Computer Science Graduate with 4.0 GPA • Big Data Engineer • Full-Stack Developer
             </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+                <a href="#contact" class="bg-white text-gray-900 px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-all transform hover:scale-105 cta-pulse">
+                    Hire Me Now
+                </a>
+                <a href="https://github.com/omerfarukbasar" target="_blank" class="border-2 border-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-gray-900 transition-all">
+                    View GitHub
+                </a>
+            </div>
+            <div class="flex justify-center space-x-6">
+                <a href="https://github.com/omerfarukbasar" target="_blank" class="text-white hover:text-blue-300 transition-colors">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/in/omerfarukbasar/" target="_blank" class="text-white hover:text-blue-300 transition-colors">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                </a>
+                <a href="https://omerfarukbasar.blogspot.com/" target="_blank" class="text-white hover:text-blue-300 transition-colors">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                    </svg>
+                </a>
+            </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section class="bg-gray-800 py-16">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold mb-8 text-center">About Me</h2>
-            <p class="text-lg max-w-2xl mx-auto text-center">
-                I'm a passionate computer science graduate from NYU, focusing on software engineering and project management. 
-                With a strong foundation in algorithms, data structures, big data, and software development methodologies, 
-                I'm eager to apply my skills to real-world challenges and innovative projects.
-            </p>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section class="py-16">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold mb-8 text-center">Skills</h2>
-            <div class="flex flex-wrap justify-center gap-2">
-                <!-- Skills badges -->
-                <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-blue-100 text-blue-800">Python</span>
-                <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-green-100 text-green-800">Java</span>
-                <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-yellow-100 text-yellow-800">HTML</span>
-                <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-red-100 text-red-800">CSS</span>
-                <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-indigo-100 text-indigo-800">Javascript</span>
-                <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-pink-100 text-pink-800">SQL</span>
-                <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-purple-100 text-purple-800">NoSQL</span>
-                <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-gray-100 text-gray-800">C</span>
-                <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-blue-100 text-blue-800">Git</span>
-                <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-green-100 text-green-800">Linux</span>
-                <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-yellow-100 text-yellow-800">Django</span>
-                <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-red-100 text-red-800">AWS</span>
-                <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-indigo-100 text-indigo-800">PySpark</span>
-                <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-pink-100 text-pink-800">Kafka</span>
-                <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-purple-100 text-purple-800">Docker</span>
-                <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-gray-100 text-gray-800">MongoDB</span>
-                <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-blue-100 text-blue-800">D3.js</span>
-                <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-green-100 text-green-800">CI/CD</span>
-                <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-yellow-100 text-yellow-800">Jira</span>
-                <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-red-100 text-red-800">Microsoft Office Suite</span>
-                <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-indigo-100 text-indigo-800">ChatGPT</span>
-                <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-pink-100 text-pink-800">Copilot</span>
-                <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-purple-100 text-purple-800">Adobe Express</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section class="bg-gray-800 py-16">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold mb-8 text-center">Projects</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="bg-gray-700 rounded-lg shadow-md overflow-hidden">
-                    <div class="p-6">
-                        <h3 class="text-lg font-semibold mb-2">Crisis Cast</h3>
-                        <p class="text-gray-300 mb-4">Built software that parses posts from various social medias to classify ongoing trends and crisis via big data and machine learning.</p>
-                        <a href="https://drive.google.com/file/d/1zY9Wx9fpCw1JWgF0teYs5nffHP10hglJ/view" class="text-blue-400 hover:text-blue-300">Research Paper <span aria-hidden="true">&rarr;</span></a><br>
-                        <a href="https://github.com/NikhilSoni15/crisiscast" class="text-blue-400 hover:text-blue-300">Github Repository <span aria-hidden="true">&rarr;</span></a>
+    <section id="about" class="py-20 bg-gray-800">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-16 fade-in">About Me</h2>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="fade-in stagger-1">
+                    <h3 class="text-2xl font-semibold mb-6 text-blue-300">Passionate Problem Solver</h3>
+                    <p class="text-lg mb-6 text-gray-300 leading-relaxed">
+                        As a recent NYU Computer Science graduate with a perfect 4.0 GPA, I bring both academic excellence and real-world experience to every project. My expertise spans big data engineering, full-stack development, and I'm actively expanding my machine learning skills through advanced coursework.
+                    </p>
+                    <p class="text-lg mb-6 text-gray-300 leading-relaxed">
+                        I've successfully led teams on complex projects, from processing 8,000+ crisis-related posts per hour using Kafka and PySpark to comprehensive transportation analysis for NYU Sustainability. My approach combines technical depth with practical business impact.
+                    </p>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-4 py-2 bg-blue-600 rounded-full text-sm font-medium">Team Leadership</span>
+                        <span class="px-4 py-2 bg-green-600 rounded-full text-sm font-medium">Big Data Engineering</span>
+                        <span class="px-4 py-2 bg-purple-600 rounded-full text-sm font-medium">Full-Stack Development</span>
+                        <span class="px-4 py-2 bg-red-600 rounded-full text-sm font-medium">Learning ML/AI</span>
                     </div>
                 </div>
-                <div class="bg-gray-700 rounded-lg shadow-md overflow-hidden">
-                    <div class="p-6">
-                        <h3 class="text-lg font-semibold mb-2">NYU Transportation & Mobility Analysis</h3>
-                        <p class="text-gray-300 mb-4">Partnered with NYU Sustainability staff to analyze 20,000 transportation records and produce D3.js visualizations.</p><br>
-                        <a href="https://observablehq.com/d/2ca9bdaa84ffa869" class="text-blue-400 hover:text-blue-300">Observable Notebook <span aria-hidden="true">&rarr;</span></a>
-                    </div>
-                </div>
-                <div class="bg-gray-700 rounded-lg shadow-md overflow-hidden">
-                    <div class="p-6">
-                        <h3 class="text-lg font-semibold mb-2">Public Servicer Finder for NYC</h3>
-                        <p class="text-gray-300 mb-4">Led development on a web app that makes locating public services more accessible to NYC residents.</p>
-                        <a href="https://nycservicefinder.live/home/" class="text-blue-400 hover:text-blue-300">Live Website <span aria-hidden="true">&rarr;</span></a><br>
-                        <a href="https://github.com/gcivil-nyu-org/wed-fall24-team1" class="text-blue-400 hover:text-blue-300">Github Repository <span aria-hidden="true">&rarr;</span></a>
-                    </div>
-                </div>
-                <div class="bg-gray-700 rounded-lg shadow-md overflow-hidden">
-                    <div class="p-6">
-                        <h3 class="text-lg font-semibold mb-2">Youtube UX Redesign</h3>
-                        <p class="text-gray-300 mb-4">Redesigned Youtube's UI with wireframes to make it more adherent to human-computer interaction design principles.</p>
-                        <a href="https://omerbasar.my.canva.site/youtube-design-plan" class="text-blue-400 hover:text-blue-300">Presentation <span aria-hidden="true">&rarr;</span></a><br>
-                        <a href="https://omerbasar.my.canva.site/" class="text-blue-400 hover:text-blue-300">Wireframe <span aria-hidden="true">&rarr;</span></a>
-                    </div>
-                </div>
-                <div class="bg-gray-700 rounded-lg shadow-md overflow-hidden">
-                    <div class="p-6">
-                        <h3 class="text-lg font-semibold mb-2">Battleship Multiplayer</h3>
-                        <p class="text-gray-300 mb-4">Built a desktop client with GUI for playing Battleship over a local area network.</p>
-                        <a href="https://www.youtube.com/watch?v=vQGnQdy09qQ" class="text-blue-400 hover:text-blue-300">Demo Video <span aria-hidden="true">&rarr;</span></a><br>
-                        <a href="https://github.com/omerfarukbasar/battleship" class="text-blue-400 hover:text-blue-300">Github Repository <span aria-hidden="true">&rarr;</span></a>
-                    </div>
-                </div>
-                <div class="bg-gray-700 rounded-lg shadow-md overflow-hidden">
-                    <div class="p-6">
-                        <h3 class="text-lg font-semibold mb-2">Room Search</h3>
-                        <p class="text-gray-300 mb-4">Implemented a mockup apartment rental service using MySQL database and Flask.</p>
-                        <a href="https://github.com/omerfarukbasar/RoomioApplication" class="text-blue-400 hover:text-blue-300">Github Repository <span aria-hidden="true">&rarr;</span></a>
-                    </div>
-                </div>
-                <div class="bg-gray-700 rounded-lg shadow-md overflow-hidden">
-                    <div class="p-6">
-                        <h3 class="text-lg font-semibold mb-2">Lyrical Song Identifier</h3>
-                        <p class="text-gray-300 mb-4">Created a shazam-like android app for identifying songs based on voice input.</p>
-                        <a href="https://www.youtube.com/watch?v=VeRcqsJv9Kk" class="text-blue-400 hover:text-blue-300">Demo Video <span aria-hidden="true">&rarr;</span></a><br>
-                        <a href="https://github.com/omerfarukbasar/lyrical" class="text-blue-400 hover:text-blue-300">Github Repository <span aria-hidden="true">&rarr;</span></a>
-                    </div>
-                </div>
-                <div class="bg-gray-700 rounded-lg shadow-md overflow-hidden max-w-[584px]">
-                    <div class="p-6">
-                        <h3 class="text-lg font-semibold mb-2">Gig Finder</h3>
-                        <p class="text-gray-300 mb-4">Spearheaded development of a social media app for musicians.</p>
-                        <a href="https://github.com/omerfarukbasar/GigFindr-Software-Eng" class="text-blue-400 hover:text-blue-300">Github Repository <span aria-hidden="true">&rarr;</span></a>
+                <div class="fade-in stagger-2">
+                    <div class="bg-gray-700 p-8 rounded-2xl shadow-xl">
+                        <h4 class="text-xl font-semibold mb-6 text-center">Key Achievements</h4>
+                        <div class="space-y-4">
+                            <div class="flex items-center">
+                                <div class="w-3 h-3 bg-blue-500 rounded-full mr-4"></div>
+                                <span>4.0 GPA at NYU Computer Science</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-3 h-3 bg-green-500 rounded-full mr-4"></div>
+                                <span>Led development of 8+ major projects</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-3 h-3 bg-purple-500 rounded-full mr-4"></div>
+                                <span>Processed 8,000+ posts/hour with big data pipeline</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-3 h-3 bg-red-500 rounded-full mr-4"></div>
+                                <span>Analyzed 17,000+ transportation records</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-3 h-3 bg-yellow-500 rounded-full mr-4"></div>
+                                <span>Tutored 100+ CS students (2+ years)</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-3 h-3 bg-orange-500 rounded-full mr-4"></div>
+                                <span>Learning ML/AI through coursework</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Education Section -->
-    <section class="py-16">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold mb-8 text-center">Education</h2>
-            <div class="bg-gray-700 rounded-lg shadow-md overflow-hidden max-w-2xl mx-auto">
-                <div class="p-6">
-                    <h3 class="text-xl font-semibold mb-2">New York University</h3>
-                    <p class="text-gray-300 mb-4">Master of Science in Computer Science</p>
-                    <p>May 2025</p>
-                    <p>GPA: 4.0</p>
-                    <p>Relevant Coursework: Algorithms, Software Engineering, Databases, Java Programming, Big Data, Information Visualization, HCI, Operating Systems, Programming Languages, Information Security & Privacy</p>
+    <!-- Technical Skills -->
+    <section class="py-20 bg-gray-900">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-16 fade-in">Technical Expertise</h2>
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="fade-in stagger-1">
+                    <h3 class="text-xl font-semibold mb-6 text-blue-300">Languages</h3>
+                    <div class="space-y-3">
+                        <div class="skill-tag bg-gradient-to-r from-blue-600 to-blue-700 px-4 py-2 rounded-lg">Python</div>
+                        <div class="skill-tag bg-gradient-to-r from-orange-600 to-orange-700 px-4 py-2 rounded-lg">Java</div>
+                        <div class="skill-tag bg-gradient-to-r from-yellow-600 to-yellow-700 px-4 py-2 rounded-lg">JavaScript</div>
+                        <div class="skill-tag bg-gradient-to-r from-red-600 to-red-700 px-4 py-2 rounded-lg">C/C++</div>
+                        <div class="skill-tag bg-gradient-to-r from-purple-600 to-purple-700 px-4 py-2 rounded-lg">SQL</div>
+                    </div>
+                </div>
+                <div class="fade-in stagger-2">
+                    <h3 class="text-xl font-semibold mb-6 text-green-300">Frameworks & Web</h3>
+                    <div class="space-y-3">
+                        <div class="skill-tag bg-gradient-to-r from-green-600 to-green-700 px-4 py-2 rounded-lg">Django</div>
+                        <div class="skill-tag bg-gradient-to-r from-indigo-600 to-indigo-700 px-4 py-2 rounded-lg">D3.js</div>
+                        <div class="skill-tag bg-gradient-to-r from-orange-600 to-orange-700 px-4 py-2 rounded-lg">HTML/CSS</div>
+                        <div class="skill-tag bg-gradient-to-r from-pink-600 to-pink-700 px-4 py-2 rounded-lg">Plotly Dash</div>
+                        <div class="skill-tag bg-gradient-to-r from-cyan-600 to-cyan-700 px-4 py-2 rounded-lg">Observable</div>
+                    </div>
+                </div>
+                <div class="fade-in stagger-3">
+                    <h3 class="text-xl font-semibold mb-6 text-purple-300">Tools & Cloud</h3>
+                    <div class="space-y-3">
+                        <div class="skill-tag bg-gradient-to-r from-orange-600 to-orange-700 px-4 py-2 rounded-lg">AWS</div>
+                        <div class="skill-tag bg-gradient-to-r from-blue-600 to-blue-700 px-4 py-2 rounded-lg">Docker</div>
+                        <div class="skill-tag bg-gradient-to-r from-red-600 to-red-700 px-4 py-2 rounded-lg">Git</div>
+                        <div class="skill-tag bg-gradient-to-r from-green-600 to-green-700 px-4 py-2 rounded-lg">Linux</div>
+                        <div class="skill-tag bg-gradient-to-r from-purple-600 to-purple-700 px-4 py-2 rounded-lg">CI/CD</div>
+                    </div>
+                </div>
+                <div class="fade-in stagger-1">
+                    <h3 class="text-xl font-semibold mb-6 text-red-300">Big Data & Databases</h3>
+                    <div class="space-y-3">
+                        <div class="skill-tag bg-gradient-to-r from-orange-600 to-orange-700 px-4 py-2 rounded-lg">PySpark</div>
+                        <div class="skill-tag bg-gradient-to-r from-red-600 to-red-700 px-4 py-2 rounded-lg">Kafka</div>
+                        <div class="skill-tag bg-gradient-to-r from-green-600 to-green-700 px-4 py-2 rounded-lg">MongoDB</div>
+                        <div class="skill-tag bg-gradient-to-r from-blue-600 to-blue-700 px-4 py-2 rounded-lg">NoSQL</div>
+                        <div class="skill-tag bg-gradient-to-r from-purple-600 to-purple-700 px-4 py-2 rounded-lg">Qdrant</div>
+                    </div>
                 </div>
             </div>
-            <br>
-            <div class="bg-gray-700 rounded-lg shadow-md overflow-hidden max-w-2xl mx-auto">
-                <div class="p-6">
-                    <h3 class="text-xl font-semibold mb-2">Adelphi University</h3>
-                    <p class="text-gray-300 mb-4">Bachelor of Science in Computer Science</p>
-                    <p>May 2022</p>
-                    <p>GPA: 3.9</p>
-                    <p>Relevant Coursework: Web Development, Data Structures, Algorithms, Software Engineering, Databases, Data Analytics, Art & Science of Management, Public Speaking</p>
+        </div>
+    </section>
+
+    <!-- Experience/Education -->
+    <section id="experience" class="py-20 bg-gray-800">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-16 fade-in">Education & Experience</h2>
+            <div class="space-y-8">
+                <div class="bg-gray-700 rounded-2xl p-8 card-hover fade-in">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4">
+                        <div>
+                            <h3 class="text-2xl font-bold text-blue-300">New York University</h3>
+                            <p class="text-xl text-gray-300">Master of Science in Computer Science</p>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-lg font-semibold text-green-400">GPA: 4.0/4.0</p>
+                            <p class="text-gray-400">May 2025</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-4">
+                        <strong>Relevant Coursework:</strong> Algorithms, Software Engineering, Databases, Big Data, 
+                        Information Visualization, HCI, Operating Systems, Programming Languages, Information Security & Privacy
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-blue-600 rounded-full text-sm">Perfect GPA</span>
+                        <span class="px-3 py-1 bg-green-600 rounded-full text-sm">Research Experience</span>
+                        <span class="px-3 py-1 bg-purple-600 rounded-full text-sm">Big Data Focus</span>
+                    </div>
                 </div>
+
+                <div class="bg-gray-700 rounded-2xl p-8 card-hover fade-in">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4">
+                        <div>
+                            <h3 class="text-2xl font-bold text-blue-300">Adelphi University</h3>
+                            <p class="text-xl text-gray-300">Bachelor of Science in Computer Science</p>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-lg font-semibold text-green-400">GPA: 3.9/4.0</p>
+                            <p class="text-gray-400">May 2022</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-4">
+                        <strong>Relevant Coursework:</strong> Web Development, Data Structures, Algorithms, Software Engineering, 
+                        Databases, Data Analytics, Management, Public Speaking
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-blue-600 rounded-full text-sm">Dean's List</span>
+                        <span class="px-3 py-1 bg-green-600 rounded-full text-sm">Magna Cum Laude</span>
+                        <span class="px-3 py-1 bg-purple-600 rounded-full text-sm">CS Tutor</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Projects -->
+    <section id="projects" class="py-20 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-16 fade-in">Featured Projects</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Crisis Cast -->
+                <div class="bg-gradient-to-br from-gray-800 to-gray-700 rounded-2xl p-6 card-hover fade-in flex flex-col h-full">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-red-600 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold">Crisis Cast</h3>
+                    </div>
+                    <p class="text-gray-300 mb-4 flex-grow">
+                        Built an end-to-end big data ingestion pipeline processing 8,000+ crisis-related posts per hour using Kafka and PySpark. Optimized Spark ETL workflows cutting runtimes by 35% and costs by 20%. Features ML classification for crisis type detection.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-2 py-1 bg-orange-600 rounded text-xs">PySpark</span>
+                        <span class="px-2 py-1 bg-red-600 rounded text-xs">Kafka</span>
+                        <span class="px-2 py-1 bg-blue-600 rounded text-xs">Big Data</span>
+                        <span class="px-2 py-1 bg-green-600 rounded text-xs">ML Classification</span>
+                    </div>
+                    <div class="flex space-x-4 mt-auto">
+                        <a href="https://drive.google.com/file/d/1zY9Wx9fpCw1JWgF0teYs5nffHP10hglJ/view" target="_blank" class="text-blue-400 hover:text-blue-300 text-sm">Research Paper →</a>
+                        <a href="https://github.com/omerfarukbasar/crisiscast" target="_blank" class="text-blue-400 hover:text-blue-300 text-sm">GitHub →</a>
+                    </div>
+                </div>
+
+                <!-- NYC Service Finder -->
+                <div class="bg-gradient-to-br from-gray-800 to-gray-700 rounded-2xl p-6 card-hover fade-in flex flex-col h-full">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold">NYC Service Finder</h3>
+                    </div>
+                    <p class="text-gray-300 mb-4 flex-grow">
+                        Full-stack web application helping NYC residents locate public services. Led team development with modern web technologies and user-centered design.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-2 py-1 bg-green-600 rounded text-xs">Django</span>
+                        <span class="px-2 py-1 bg-blue-600 rounded text-xs">JavaScript</span>
+                        <span class="px-2 py-1 bg-purple-600 rounded text-xs">Leadership</span>
+                    </div>
+                    <div class="flex space-x-4 mt-auto">
+                        <a href="https://nycservicefinder.live/home/" target="_blank" class="text-blue-400 hover:text-blue-300 text-sm">Live Site →</a>
+                        <a href="https://github.com/gcivil-nyu-org/wed-fall24-team1" target="_blank" class="text-blue-400 hover:text-blue-300 text-sm">GitHub →</a>
+                    </div>
+                </div>
+
+                <!-- Transportation Analysis -->
+                <div class="bg-gradient-to-br from-gray-800 to-gray-700 rounded-2xl p-6 card-hover fade-in flex flex-col h-full">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.22.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold">NYU Mobility Analysis</h3>
+                    </div>
+                    <p class="text-gray-300 mb-4 flex-grow">
+                        Analyzed 17,000+ campus mobility records with NYU Sustainability staff. Built 4 interactive D3.js visualizations revealing that single-occupancy vehicles (3.9% of trips) generate 22.5% of emissions, supporting NYU's 2040 carbon neutrality goal.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-2 py-1 bg-blue-600 rounded text-xs">D3.js</span>
+                        <span class="px-2 py-1 bg-green-600 rounded text-xs">Data Analysis</span>
+                        <span class="px-2 py-1 bg-yellow-600 rounded text-xs">Sustainability</span>
+                        <span class="px-2 py-1 bg-purple-600 rounded text-xs">Observable</span>
+                    </div>
+                    <div class="mt-auto">
+                        <a href="https://observablehq.com/d/2ca9bdaa84ffa869" target="_blank" class="text-blue-400 hover:text-blue-300 text-sm">View Analysis →</a>
+                    </div>
+                </div>
+
+                <!-- YouTube Redesign -->
+                <div class="bg-gradient-to-br from-gray-800 to-gray-700 rounded-2xl p-6 card-hover fade-in flex flex-col h-full">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-red-600 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold">YouTube UX Redesign</h3>
+                    </div>
+                    <p class="text-gray-300 mb-4 flex-grow">
+                        Comprehensive UX/UI redesign of YouTube's interface using human-computer interaction principles. Created detailed wireframes and user flow analysis.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-2 py-1 bg-blue-600 rounded text-xs">Wireframing</span>
+                    </div>
+                    <div class="flex space-x-4 mt-auto">
+                        <a href="https://omerbasar.my.canva.site/youtube-design-plan" target="_blank" class="text-blue-400 hover:text-blue-300 text-sm">Presentation →</a>
+                        <a href="https://omerbasar.my.canva.site/" target="_blank" class="text-blue-400 hover:text-blue-300 text-sm">Wireframes →</a>
+                    </div>
+                </div>
+
+                <!-- Battleship Multiplayer -->
+                <div class="bg-gradient-to-br from-gray-800 to-gray-700 rounded-2xl p-6 card-hover fade-in flex flex-col h-full">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-indigo-600 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M4 6h2v2H4zm0 5h2v2H4zm0 5h2v2H4zm16-8V6H8.023v2H18.8zM8 11h12v2H8zm0 5h12v2H8z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold">Battleship Multiplayer</h3>
+                    </div>
+                    <p class="text-gray-300 mb-4 flex-grow">
+                        Desktop multiplayer game with custom GUI built in Java. Features network programming for local area network gameplay with intuitive user interface and real-time game state synchronization.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-2 py-1 bg-orange-600 rounded text-xs">Java</span>
+                        <span class="px-2 py-1 bg-blue-600 rounded text-xs">Networking</span>
+                        <span class="px-2 py-1 bg-green-600 rounded text-xs">GUI</span>
+                        <span class="px-2 py-1 bg-purple-600 rounded text-xs">Game Dev</span>
+                    </div>
+                    <div class="flex space-x-4 mt-auto">
+                        <a href="https://www.youtube.com/watch?v=vQGnQdy09qQ" target="_blank" class="text-blue-400 hover:text-blue-300 text-sm">Demo →</a>
+                        <a href="https://github.com/omerfarukbasar/battleship" target="_blank" class="text-blue-400 hover:text-blue-300 text-sm">GitHub →</a>
+                    </div>
+                </div>
+
+                <!-- Lyrical Song Identifier -->
+                <div class="bg-gradient-to-br from-gray-800 to-gray-700 rounded-2xl p-6 card-hover fade-in flex flex-col h-full">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold">Lyrical Song Identifier</h3>
+                    </div>
+                    <p class="text-gray-300 mb-4 flex-grow">
+                        Android application for song identification through voice input analysis. Implements speech recognition and audio processing algorithms for music detection.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-2 py-1 bg-green-600 rounded text-xs">Android</span>
+                        <span class="px-2 py-1 bg-purple-600 rounded text-xs">Audio Processing</span>
+                        <span class="px-2 py-1 bg-blue-600 rounded text-xs">API Integration</span>
+                    </div>
+                    <div class="flex space-x-4 mt-auto">
+                        <a href="https://www.youtube.com/watch?v=VeRcqsJv9Kk" target="_blank" class="text-blue-400 hover:text-blue-300 text-sm">Demo →</a>
+                        <a href="https://github.com/omerfarukbasar/lyrical" target="_blank" class="text-blue-400 hover:text-blue-300 text-sm">GitHub →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- View All Projects Button -->
+            <div class="text-center mt-12 fade-in">
+                <a href="https://github.com/omerfarukbasar" target="_blank" class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full font-semibold hover:from-blue-700 hover:to-purple-700 transition-all transform hover:scale-105">
+                    View All Projects on GitHub
+                    <svg class="ml-2 w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                </a>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <footer class="bg-gray-800 py-16">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl font-bold mb-8">Get In Touch</h2>
-            <p class="mb-4">I'm always open to new opportunities and collaborations.</p>
-            <a href="mailto:omerfbasar@gmail.com" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700">
-                <svg class="mr-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                </svg>
-                Contact Me
-            </a>
+    <section id="contact" class="py-20 bg-gray-800">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-8 fade-in">Let's Work Together</h2>
+            <p class="text-xl mb-12 text-gray-300 fade-in">
+                Ready to discuss how I can contribute to your team? I respond to all inquiries within 24 hours.
+            </p>
+            
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <div class="bg-gray-700 p-6 rounded-2xl card-hover fade-in">
+                    <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Email</h3>
+                    <button onclick="copyEmail()" class="text-blue-400 hover:text-blue-300 cursor-pointer" id="email-btn">
+                        Click to reveal email
+                    </button>
+                </div>
+                
+                <div class="bg-gray-700 p-6 rounded-2xl card-hover fade-in">
+                    <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">LinkedIn</h3>
+                    <a href="https://www.linkedin.com/in/omerfarukbasar/" target="_blank" class="text-blue-400 hover:text-blue-300">Connect with me</a>
+                </div>
+                
+                <div class="bg-gray-700 p-6 rounded-2xl card-hover fade-in">
+                    <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.30.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">GitHub</h3>
+                    <a href="https://github.com/omerfarukbasar" target="_blank" class="text-blue-400 hover:text-blue-300">View my code</a>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-blue-600 to-purple-600 p-8 rounded-2xl fade-in">
+                <h3 class="text-2xl font-bold mb-4">Why Hire Me?</h3>
+                <div class="grid md:grid-cols-2 gap-6 text-left">
+                    <div>
+                        <h4 class="font-semibold mb-2">🎯 Immediate Impact</h4>
+                        <p class="text-sm">Ready to contribute from day one with proven project leadership and tutoring experience</p>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold mb-2">🚀 Technical Excellence</h4>
+                        <p class="text-sm">4.0 GPA graduate with expertise in big data engineering and full-stack development</p>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold mb-2">🤝 Proven Mentor</h4>
+                        <p class="text-sm">Successfully tutored 100+ students with 85% achieving B+ or higher grades</p>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold mb-2">📈 Growth Mindset</h4>
+                        <p class="text-sm">Continuously learning new technologies including ML/AI through advanced coursework</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-8">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <p class="text-gray-400 mb-4">© 2025 Omer Faruk Basar. All rights reserved.</p>
+            <p class="text-sm text-gray-500">Built with modern web technologies • Optimized for performance • Mobile responsive</p>
         </div>
     </footer>
 
