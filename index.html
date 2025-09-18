@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Omer Faruk Basar | Backend Developer & Data Engineer</title>
+    <link rel="icon" href="data:image/svg+xml,<svg width='32' height='32' viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'><defs><linearGradient id='bg' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' style='stop-color:%231e40af;stop-opacity:1' /><stop offset='100%25' style='stop-color:%233b82f6;stop-opacity:1' /></linearGradient></defs><rect width='32' height='32' rx='6' fill='url(%23bg)' /><text x='16' y='22' font-family='Inter, system-ui, sans-serif' font-size='14' font-weight='700' fill='white' text-anchor='middle'>OB</text></svg>">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body { 
+            font-family: 'Inter', sans-serif; 
+        }
+        
+        .hero-bg {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 6px;
+            background: #000;
+            color: #fff;
+            padding: 8px;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        
+        .skip-link:focus {
+            top: 6px;
+        }
+        
+        button:focus, a:focus {
+            outline: 2px solid #3b82f6;
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <nav class="fixed top-0 w-full z-50 bg-white shadow-sm" role="navigation">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="text-xl font-bold text-gray-900">Omer Faruk Basar</div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#projects" class="text-gray-700 hover:text-blue-600 focus:text-blue-600 transition-colors">Projects</a>
+                    <a href="#experience" class="text-gray-700 hover:text-blue-600 focus:text-blue-600 transition-colors">Experience</a>
+                    <a href="#contact" class="text-gray-700 hover:text-blue-600 focus:text-blue-600 transition-colors">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main-content">
+        <section class="pt-24 pb-20 hero-bg text-white">
+            <div class="max-w-4xl mx-auto px-4 text-center">
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">Omer Faruk Basar</h1>
+                <p class="text-lg sm:text-xl md:text-2xl mb-8 opacity-90">Backend Developer & Data Engineer</p>
+                <p class="text-base sm:text-lg md:text-xl mb-12 opacity-80 max-w-3xl mx-auto leading-relaxed">
+                    NYU Computer Science graduate building scalable data pipelines and backend systems. 
+                    Experience processing 8,000+ records per hour with modern technologies.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
+                    <a href="#contact" class="bg-white text-blue-600 hover:bg-gray-100 focus:bg-gray-100 px-8 py-4 rounded-lg font-semibold transition-colors min-h-[48px] flex items-center">
+                        Get In Touch
+                    </a>
+                    <a href="https://github.com/omerfarukbasar" target="_blank" rel="noopener noreferrer" class="border-2 border-white hover:bg-white hover:text-blue-600 focus:bg-white focus:text-blue-600 px-8 py-4 rounded-lg font-semibold transition-all min-h-[48px] flex items-center">
+                        GitHub
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 bg-gray-50">
+            <div class="max-w-6xl mx-auto px-4">
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+                    <div>
+                        <h3 class="font-bold text-blue-600 mb-3 text-lg">Languages</h3>
+                        <p class="text-gray-700">Python, Java, SQL, C/C++</p>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-blue-600 mb-3 text-lg">Backend</h3>
+                        <p class="text-gray-700">Django, Flask, MongoDB, AWS</p>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-blue-600 mb-3 text-lg">Data</h3>
+                        <p class="text-gray-700">pandas, NumPy, Plotly, Jupyter</p>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-blue-600 mb-3 text-lg">Currently Learning</h3>
+                        <p class="text-gray-700">PyTorch, Deep Learning</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4">
+                <h2 class="text-3xl sm:text-4xl font-bold text-center mb-16 text-gray-900">Featured Projects</h2>
+                <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-10">
+                    
+                    <article class="bg-white border border-gray-200 rounded-xl p-6 sm:p-10 card-hover transition-all flex flex-col">
+                        <h3 class="text-xl sm:text-2xl font-bold mb-4 text-gray-900">Crisis Cast</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed text-sm sm:text-base flex-grow">
+                            Built end-to-end data pipeline with Kafka and PySpark processing 8000+ crisis posts per hour from multiple APIs. 
+                            Optimized Spark workflows reducing runtimes by 35% through in-memory caching and designed MongoDB schemas cutting query latency by 50%.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs sm:text-sm font-medium">PySpark</span>
+                            <span class="px-3 py-1 bg-red-100 text-red-800 rounded-full text-xs sm:text-sm font-medium">Kafka</span>
+                            <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs sm:text-sm font-medium">MongoDB</span>
+                        </div>
+                        <a href="https://github.com/omerfarukbasar/crisiscast" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 focus:text-blue-800 font-semibold">
+                            View Repository
+                        </a>
+                    </article>
+
+                    <article class="bg-white border border-gray-200 rounded-xl p-6 sm:p-10 card-hover transition-all flex flex-col">
+                        <h3 class="text-xl sm:text-2xl font-bold mb-4 text-gray-900">NYU Transportation Analysis</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed text-sm sm:text-base flex-grow">
+                            Analyzed 17,000+ campus mobility records to identify emission reduction opportunities for NYU sustainability team. 
+                            Created 4 interactive D3.js visualizations enabling real-time scenario exploration.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs sm:text-sm font-medium">D3.js</span>
+                            <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs sm:text-sm font-medium">Data Analysis</span>
+                            <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-xs sm:text-sm font-medium">Python</span>
+                        </div>
+                        <a href="https://observablehq.com/d/2ca9bdaa84ffa869" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 focus:text-blue-800 font-semibold">
+                            View Analysis
+                        </a>
+                    </article>
+
+                    <article class="bg-white border border-gray-200 rounded-xl p-6 sm:p-10 card-hover transition-all md:col-span-2 xl:col-span-1 flex flex-col">
+                        <h3 class="text-xl sm:text-2xl font-bold mb-4 text-gray-900">NYC Public Service Finder</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed text-sm sm:text-base flex-grow">
+                            Led 4-developer team through 12 agile sprints, achieving 92% user satisfaction among beta testers. 
+                            Built Django backend and deployed to AWS, improving service location speed by 87%.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs sm:text-sm font-medium">Django</span>
+                            <span class="px-3 py-1 bg-orange-100 text-orange-800 rounded-full text-xs sm:text-sm font-medium">AWS</span>
+                            <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-xs sm:text-sm font-medium">Leadership</span>
+                        </div>
+                        <a href="https://nycservicefinder.live" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 focus:text-blue-800 font-semibold">
+                            View Live Site
+                        </a>
+                    </article>
+                </div>
+
+                <div class="text-center mt-12">
+                    <a href="https://github.com/omerfarukbasar" target="_blank" rel="noopener noreferrer" class="inline-block bg-blue-600 hover:bg-blue-700 focus:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold transition-colors min-h-[48px]">
+                        View All Projects on GitHub
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="py-20 bg-gray-50">
+            <div class="max-w-6xl mx-auto px-4">
+                <h2 class="text-3xl sm:text-4xl font-bold text-center mb-16 text-gray-900">Background</h2>
+                
+                <div class="grid lg:grid-cols-2 gap-10">
+                    <div class="bg-white rounded-xl p-6 sm:p-10 border border-gray-200">
+                        <h3 class="text-xl sm:text-2xl font-bold mb-6 text-blue-600">Education</h3>
+                        <div class="space-y-6">
+                            <div>
+                                <h4 class="font-bold text-lg">New York University</h4>
+                                <p class="text-gray-600">M.S. Computer Science, GPA: 4.0</p>
+                                <p class="text-sm text-gray-500">May 2025</p>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Adelphi University</h4>
+                                <p class="text-gray-600">B.S. Computer Science, GPA: 3.9</p>
+                                <p class="text-sm text-gray-500">May 2022 • Summa Cum Laude</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-6 sm:p-10 border border-gray-200">
+                        <h3 class="text-xl sm:text-2xl font-bold mb-6 text-blue-600">Experience</h3>
+                        <div>
+                            <h4 class="font-bold text-lg">Computer Science Tutor</h4>
+                            <p class="text-gray-600 mb-2">Adelphi University</p>
+                            <p class="text-sm text-gray-500 mb-4">November 2020 – May 2022</p>
+                            <ul class="text-gray-600 text-sm space-y-2 leading-relaxed">
+                                <li>• Mentored 100+ students in algorithms and data structures</li>
+                                <li>• Achieved 85% success rate helping students reach B+ grades</li>
+                                <li>• Reduced course dropout rates by 30%</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-20 bg-white">
+            <div class="max-w-4xl mx-auto px-4 text-center">
+                <h2 class="text-3xl sm:text-4xl font-bold mb-8 text-gray-900">Let's Connect</h2>
+                <p class="text-lg sm:text-xl mb-12 text-gray-600">
+                    Interested in backend development or data engineering opportunities? Let's talk.
+                </p>
+                
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-gray-50 p-6 rounded-xl">
+                        <h3 class="font-bold mb-2 text-gray-900">Email</h3>
+                        <button onclick="showEmail()" class="text-blue-600 hover:text-blue-800 focus:text-blue-800 cursor-pointer min-h-[48px] flex items-center justify-center w-full" id="email-button">
+                            Click to reveal
+                        </button>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-6 rounded-xl">
+                        <h3 class="font-bold mb-2 text-gray-900">LinkedIn</h3>
+                        <a href="https://linkedin.com/in/omerfarukbasar" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 focus:text-blue-800 min-h-[48px] flex items-center justify-center">
+                            /in/omerfarukbasar
+                        </a>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-6 rounded-xl sm:col-span-2 lg:col-span-1">
+                        <h3 class="font-bold mb-2 text-gray-900">GitHub</h3>
+                        <a href="https://github.com/omerfarukbasar" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 focus:text-blue-800 min-h-[48px] flex items-center justify-center">
+                            /omerfarukbasar
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-50 py-8" role="contentinfo">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <p class="text-gray-500">© 2025 Omer Faruk Basar</p>
+        </div>
+    </footer>
+
+    <script>
+        function showEmail() {
+            const button = document.getElementById('email-button');
+            button.textContent = 'omerfarukbasar@outlook.com';
+            button.onclick = function() {
+                navigator.clipboard.writeText('omerfarukbasar@outlook.com');
+                button.textContent = 'Copied!';
+                setTimeout(() => {
+                    button.textContent = 'omerfarukbasar@outlook.com';
+                }, 2000);
+            };
+        }
+    </script>
+</body>
+</html>
